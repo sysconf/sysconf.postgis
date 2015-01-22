@@ -1,3 +1,4 @@
 # definitions for gitted/sync "actual"  -*- shell-script -*-
 
 export GITTED_POSTGRESQL_DATABASE=postgis
+export GITTED_POSTGRESQL_DATA_PATH=postgis
