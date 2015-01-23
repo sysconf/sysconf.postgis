@@ -1,0 +1,4 @@
+# Environment for sysconf "sysconf.gitted.postgis"  -*- shell-script -*-
+
+SYSCONF_GITTED_POSTGRESQL_VERSION=9.4
+SYSCONF_GITTED_POSTGRESQL_DATABASE=postgis
