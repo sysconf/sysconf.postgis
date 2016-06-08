@@ -5,10 +5,15 @@
 
 # Install required Debian packages
 _packages=
-_packages="$_packages postgis postgresql-${SYSCONF_GITTED_POSTGRESQL_VERSION}-postgis-2.1"
+#_packages="$_packages postgis postgresql-${SYSCONF_GITTED_POSTGRESQL_VERSION}-postgis-2.1"
+_packages="$_packages postgis"
 _packages="$_packages nginx"
 _packages="$_packages php5-fpm php5-cli php5-pgsql php5-mcrypt php5-curl"
 sysconf_require_packages $_packages
+
+postgis_version=$(dpkg -l | grep postgis | grep ' postgis ' | awk '{print $3}' | sed -r 's/^([^.].[^.]).*/\1/')
+sysconf_require_packages postgresql-${SYSCONF_GITTED_POSTGRESQL_VERSION}-postgis-$postgis_version
+
 
 # Fix Nginx
 _force_nginx_restart=no
